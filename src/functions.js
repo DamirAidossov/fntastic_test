@@ -24,7 +24,7 @@ function searchMessages(arr, id){
     let img = document.createElement('img');
     let nameSpan = document.createElement('span');
     let msgSpan = document.createElement('span');
-    li.setAttribute("class","d-flex flex-row p-2");
+    li.setAttribute("class","d-flex flex-row p-2 messageItem");
     imgDiv.setAttribute("class","mx-3 align-self-center");
     img.setAttribute("class","userPic");
     img.setAttribute("src", item.pic);

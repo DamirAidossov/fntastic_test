@@ -124,7 +124,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
       
       li.setAttribute('channelId', `${curServ.channels[i].channel_id}`)
-      li.setAttribute('class',"my-2 channelItem")
+      li.setAttribute('class',"m-2 channelItem d-flex flex-row align-items-center")
       span.innerHTML = curServ.channels[i].name
       
       li.appendChild(icon)
