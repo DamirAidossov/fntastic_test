@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4dc78a0cfd.js" crossorigin="anonymous"></script>
+    <link href="./src/styles.css" rel="stylesheet">
+    <title>Fntastic Window!</title>
+  </head>
+  <body>
+    <div class="container-fluid almostBlack m-0 p-0 h-100">
+      <div id="titleBar" class="text-white draggable d-flex flew-row justify-content-between">
+        <span class="mx-2"> Fntastic </span>
+        <div class="px-3">
+          <i id="min-btn" class="far fa-window-minimize notDraggable"></i>
+          <i id="max-btn" class="far fa-square notDraggable"></i>
+          <i id="close-btn" class="far fa-window-close notDraggable"></i>
+        </div>
+      </div>
+      <div class="row container-fluid m-0 p-0 barHeight almostBlack">
+        <div class="col col-width-60">
+          <ul id="serverList">
+          </ul>
+          <ul>
+            <li class="servIconLi">
+              <img class="servIcon" src="./assets/plus.png">
+            </li>
+            <li class="servIconLi">
+              <img class="servIcon" src="./assets/search.png">
+            </li>
+          </ul>
+        </div>
+        <div id="mainCont" class="col container-fluid darkGrey m-0 p-0 contHeight">
+          <div id="mainNavbar" class="border-bottom border-dark border-3 row container-fluid m-0 p-0">
+            <div class="col col-width-200 darkGrey text-start align-self-center p-0">
+                <span id="serverName" class="textLight mx-3 text-uppercase">  </span>
+            </div>
+            <div class="col grey d-flex align-items-center">
+              <div class="me-auto">
+                <i class="fas fa-hashtag textLight"></i>
+                <span id="channelName" class="textLight">  </span>
+              </div>
+              <div class="mx-2">
+                <i class="mx-2 fas fa-lg fa-bell textLight"></i>
+                <i class="mx-2 fas fa-lg fa-thumbtack textLight"></i>
+                <i class="mx-2 fas fa-lg fa-user-friends textLight"></i>
+              </div>
+              
+            </div>
+            <div class="col col-width-200 grey textLight d-flex flex-row align-items-center">
+              <div class="">
+                <div class="input-group" >
+                  <input style="width: 80px;" type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+                  <i class="fas fa-search input-group-text" id="basic-addon1"></i>
+                </div>
+              </div>
+              <i class="fas fa-lg fa-at mx-2"></i>
+              <i class="fas fa-lg fa-question-circle"></i>
+              
+            </div>
+          </div>
+          <div class="row container-fluid m-0 p-0 contHeight">
+            <div class="col col-width-200 darkGrey p-0 d-flex align-items-start flex-column h-100">
+              <div  class="textLight userHeight mb-auto w-100 userHeigth">
+                <ul id="channelsList" class="scrollable h-100">
+
+                </ul>
+              </div>
+              <div id="userCont" class="grey textLight d-flex flex-row justify-content-between">
+                <div class="d-flex flex-row align-items-center">
+                  <img src="./assets/avatars/10.png" alt="profile" class="userListPic mx-1">
+                  <span class="mx-1">MyName</span>
+                </div>
+                <div class="d-flex flex-row align-items-center">
+                  <i class="fas fa-lg fa-microphone mx-1"></i>
+                  <i class="fas fa-lg fa-headphones mx-1"></i>
+                  <i class="fas fa-lg fa-cog mx-1"></i>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col grey textLight p-0 d-flex flex-column h-100">
+              <div class="textLight chatHeight mt-auto w-100">
+                <ul id="messagesList" class="h-100 scrollable d-flex flex-column-reverse">
+                  
+                </ul>
+              </div>
+              <div id="chatInput" class="grey textLight p-4 border-top border-secondary">
+                <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="addon-wrapping">+</span>
+                  <input id="messageInput" type="text" class="form-control" placeholder="message" aria-label="message" aria-describedby="addon-wrapping">
+                </div>
+              </div>
+            </div>
+            <div class="col col-width-200 darkGrey textLight h-100 ">
+              <ul id="usersList" class="h-100 scrollable" >
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+    
+  </body>
+</html>
