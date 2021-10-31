@@ -1,5 +1,5 @@
 # Discord Like Demo Application
-Приложение написано с использованием Node.js, Electron, Bootstrap 5 и Fontawesome 5 для иконок. В остальном все на чистом JS, CSS и HTML.
+Приложение написано с использованием Node.js, Electron, Bootstrap 5 и Fontawesome 5 для иконок (popperjs/core установлен как зависимость Bootstrap). В остальном все на чистом JS, CSS и HTML.
 
 ## Запуск приложения:
 1. Склонировать репозиторий
