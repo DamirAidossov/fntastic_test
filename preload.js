@@ -60,30 +60,34 @@ window.addEventListener('DOMContentLoaded', () => {
         curServ = servers[i]
       }
     }
+    document.querySelector('ul > li > img.activeServ').classList.remove("activeServ")
+    document.querySelector(`img[servId="${parseInt(id)}"]`).classList.add("activeServ");
     changeDomData(curServ);
   }); 
 
   document.getElementById("messageInput").addEventListener("keypress", function (e) {
-    if (e.key === 'Enter') {
-      let mList2 = document.getElementById("messagesList")
-      let id = document.querySelector('ul > li > span.textLight').getAttribute('channelId')
-      let el = {
-        messageId: Date.now(),
-        channel: parseInt(id),
-        content: document.getElementById("messageInput").value,
-        author: "Current User",
-        pic: "./assets/avatars/1.png",
-      }
-      for(let i in servers){
-        if(servers[i].server_id == curServ.server_id){
-          servers[i].messages.push(el)
-          curServ = servers[i];
-        }
-      }
-      mList2.prepend(createMessageElem(el))
-      document.getElementById("messageInput").value = ""
-
+    if (e.key !== 'Enter' || document.getElementById("messageInput").value == "") {
+      return;
     }
+    let mList2 = document.getElementById("messagesList")
+    let id = document.querySelector('ul > li > span.textLight').getAttribute('channelId')
+    let el = {
+      messageId: Date.now(),
+      channel: parseInt(id),
+      content: document.getElementById("messageInput").value,
+      author: "Current User",
+      pic: "./assets/avatars/1.png",
+    }
+    for(let i in servers){
+      if(servers[i].server_id == curServ.server_id){
+        servers[i].messages.push(el)
+        curServ = servers[i];
+      }
+    }
+    mList2.prepend(createMessageElem(el))
+    document.getElementById("messageInput").value = ""
+
+    
   });
   let servCont = document.getElementById("serverList");
   
@@ -93,7 +97,11 @@ window.addEventListener('DOMContentLoaded', () => {
     li.setAttribute('class', "servIconLi")
     let img = document.createElement('img')
     img.setAttribute('servId', `${servers[i].server_id}`)
-    img.setAttribute('class',"servIcon")
+    if(servers[i].server_id == 1){
+      img.setAttribute('class', "servIcon activeServ")
+    } else {
+      img.setAttribute('class', "servIcon")
+    }
     img.setAttribute('src',`${servers[i].avatar}`)
     li.appendChild(img)
     servCont.appendChild(li)

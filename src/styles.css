@@ -183,3 +183,7 @@ ul {
 	border: 2px solid #282a2d;
 	border-radius: 10px;
 }
+
+.activeServ{
+    border: groove;
+}
