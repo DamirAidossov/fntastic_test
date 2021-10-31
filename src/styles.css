@@ -1,167 +1,185 @@
-/* styles.css */
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
-
-
-
 body {
-    height:100vh;
-    font-family: 'Roboto', sans-serif;
-}
-html{
-    height:100vh;
+	height: 100vh;
+	font-family: 'Roboto', sans-serif;
 }
 
-.col-width-60{
-    flex: 0 0 60px;
+html {
+	height: 100vh;
 }
 
-.col-width-200{
-    flex: 0 0 200px;
+.col-width-60 {
+	flex: 0 0 60px;
 }
-#titleBar{
-    height: 25px;
+
+.col-width-200 {
+	flex: 0 0 200px;
 }
-#mainNavbar{
-    height: 60px;
+
+#titleBar {
+	height: 25px;
 }
-.servIcon{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    transition: border-radius 0.6s ;
-    -webkit-transition: border-radius 0.6s;
+
+#mainNavbar {
+	height: 60px;
 }
-.servIcon:hover{
-    border-radius: 20%;
+
+.servIcon {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	transition: border-radius 0.6s;
+	-webkit-transition: border-radius 0.6s;
 }
+
+.servIcon:hover {
+	border-radius: 20%;
+}
+
 ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
 }
+
 .channelItem {
-    cursor: pointer;
-    border-radius: 5px;
-}
-.channelItem:hover{
-    background:#36393F;
-}
-.messageItem:hover{
-    background:#3d4246;
+	cursor: pointer;
+	border-radius: 5px;
 }
 
-.servIconLi{
-    padding: 5px;
-    cursor: pointer;
-    
-}
-.barHeight{
-    height: calc(100vh - 25px);
-}
-.contHeight{
-    height: calc(100vh - 85px);
-}
-.userHeight{
-    height: calc(100% - 55px)
-}
-.chatHeight{
-    max-height: calc(100% - 80px)
-}
-#userCont{
-    height:55px;
-    width: 100%;
-    background: #34373b;
-}
-#chatInput{
-    height:80px;
-    width: 100%;
-}
-.darkGrey{
-    background: #2C2F33;
-}
-.almostBlack{
-    background: #23272A;
-}
-.lightGrey{
-    background: #99AAB5;
-}
-.grey{
-    background: #36393F;
+.channelItem:hover {
+	background: #36393F;
 }
 
-.textDark{
-    color:#6f7a81
+.messageItem:hover {
+	background: #3d4246;
 }
-.textLight{
-    color:#FFFFFF
+
+.servIconLi {
+	padding: 5px;
+	cursor: pointer;
 }
+
+.barHeight {
+	height: calc(100vh - 25px);
+}
+
+.contHeight {
+	height: calc(100vh - 85px);
+}
+
+.userHeight {
+	height: calc(100% - 55px)
+}
+
+.chatHeight {
+	max-height: calc(100% - 80px)
+}
+
+#userCont {
+	height: 55px;
+	width: 100%;
+	background: #34373b;
+}
+
+#chatInput {
+	height: 80px;
+	width: 100%;
+}
+
+.darkGrey {
+	background: #2C2F33;
+}
+
+.almostBlack {
+	background: #23272A;
+}
+
+.lightGrey {
+	background: #99AAB5;
+}
+
+.grey {
+	background: #36393F;
+}
+
+.textDark {
+	color: #6f7a81
+}
+
+.textLight {
+	color: #FFFFFF
+}
+
 .form-control {
-    color: #FFFFFF;
-    background-color: #3d4246;
-    border: 0px;
+	color: #FFFFFF;
+	background-color: #3d4246;
+	border: 0px;
 }
+
 .form-control:focus {
-    color: #FFFFFF;
-    background-color: #3d4246;
-    border: 0px;
-    box-shadow:none;
+	color: #FFFFFF;
+	background-color: #3d4246;
+	border: 0px;
+	box-shadow: none;
 }
+
 .input-group-text {
-    color: #FFFFFF;
-    background-color: #3d4246;
-    border: 0px;
+	color: #FFFFFF;
+	background-color: #3d4246;
+	border: 0px;
 }
 
-.userPic{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-.userListPic{
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
+.userPic {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
 }
 
-.fs-7{
-    font-size: 0.9rem;
+.userListPic {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
 }
 
-#mainCont{
-    border-radius: 13px 0 0 0 ;
+.fs-7 {
+	font-size: 0.9rem;
 }
 
-.draggable{
-    -webkit-app-region: drag
+#mainCont {
+	border-radius: 13px 0 0 0;
 }
 
-.notDraggable{
-    -webkit-app-region: no-drag
+.draggable {
+	-webkit-app-region: drag
 }
-.scrollable{
-    overflow-y:scroll;
-    overflow-x: hidden;
+
+.notDraggable {
+	-webkit-app-region: no-drag
+}
+
+.scrollable {
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-    width: 12px;
-    background-color: transparent;
+	width: 12px;
+	background-color: transparent;
 }
 
 ::-webkit-scrollbar-button {
-    display: none;
-    width: 0;
-    height: 0;
+	display: none;
+	width: 0;
+	height: 0;
 }
 
 ::-webkit-scrollbar-corner {
-    background-color: transparent;
+	background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #4a4d52;
-    border: 2px solid #282a2d;
-    border-radius: 10px;
+	background-color: #4a4d52;
+	border: 2px solid #282a2d;
+	border-radius: 10px;
 }
-/* Add styles here to customize the appearance of your app */

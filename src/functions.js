@@ -41,4 +41,58 @@ function searchMessages(arr, id){
     return li
   }
 
-  module.exports = { searchMessages , createMessageElem}
+  function changeDomData(curServ){
+    document.getElementById("serverName").innerHTML = curServ.name
+    document.getElementById("channelName").innerHTML = curServ.channels[0].name
+    let chList = document.getElementById("channelsList")
+    chList.innerHTML = ""
+    for(let i in curServ.channels){
+      let span = document.createElement('span')
+      let li = document.createElement('li')
+      let icon = document.createElement('i')
+      if(curServ.channels[i].channel_id == 1){
+        span.setAttribute("class","textLight")
+        icon.setAttribute('class','fas fa-hashtag textLight mx-3')
+        span.setAttribute("channelId",`${curServ.channels[i].channel_id}`)
+        icon.setAttribute('channelId',`${curServ.channels[i].channel_id}`)
+      } else {
+        span.setAttribute("class","textDark")
+        icon.setAttribute('class','fas fa-hashtag textDark mx-3')
+        span.setAttribute("channelId",`${curServ.channels[i].channel_id}`)
+        icon.setAttribute('channelId',`${curServ.channels[i].channel_id}`)
+      }
+      
+      li.setAttribute('channelId', `${curServ.channels[i].channel_id}`)
+      li.setAttribute('class',"m-2 channelItem d-flex flex-row align-items-center")
+      span.innerHTML = curServ.channels[i].name
+      
+      li.appendChild(icon)
+      li.appendChild(span)
+      chList.appendChild(li)
+    }
+
+    let uList = document.getElementById("usersList")
+    uList.innerHTML = ""
+    for(let i in curServ.users){
+      let li = document.createElement('li')
+      let img = document.createElement('img')
+      let span = document.createElement('span')
+      img.setAttribute('class',"userListPic mx-2")
+      img.setAttribute('src',`${curServ.users[i].pic}`)
+      li.setAttribute("class","my-2 w-100")
+      span.innerHTML = curServ.users[i].name
+      li.appendChild(img)
+      li.appendChild(span)
+      uList.appendChild(li)
+    }
+
+    let mList = document.getElementById("messagesList")
+    mList.innerHTML = ""
+    let startMessages = searchMessages(curServ.messages, 1)
+    for(let i in startMessages){
+      let elem = createMessageElem(startMessages[i])
+      mList.prepend(elem);
+    }
+  }
+
+  module.exports = { searchMessages , createMessageElem, changeDomData}

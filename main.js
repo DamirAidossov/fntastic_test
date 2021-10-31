@@ -28,18 +28,15 @@ app.whenReady().then(() => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
 })
-
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
-
 ipcMain.on("minimize", function(event, arg) {
   let w = BrowserWindow.getFocusedWindow()
   w.minimize()
 });
 ipcMain.on("maximize", function(event, arg) {
   let w = BrowserWindow.getFocusedWindow()
-  
   if(w.isMaximized()){
     w.unmaximize()
   } else {
@@ -49,8 +46,4 @@ ipcMain.on("maximize", function(event, arg) {
 ipcMain.on("close", function(event, arg) {
   let w = BrowserWindow.getFocusedWindow()
   w.close();
-});
-ipcMain.on("channel", function(event, arg) {
-  console.log("Event in mainjs ",event)
-  console.log("Arg in mainjs ",arg)
 });
